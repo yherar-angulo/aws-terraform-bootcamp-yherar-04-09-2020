@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  become: true
+ 
+  tasks:
+    - name: 
+      yum:
+        name: 
+        state: 
+ 
+    - name: 
+      service:
+        name: 
+        state: 
+        enabled: 
+ 
+    - name: 
+      yum:
+        name: 
+        state: 
+ 
+    - name: 
+      shell: 
+        
+ 
+    - name: clone web
+      git:
+        repo: 
+        dest: 
+        version: 

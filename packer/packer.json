@@ -1,0 +1,39 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "ami_name": "",
+    "region": "",
+    "source_ami": "",
+    "instance_type": ""
+  },
+  "builders": [{
+    "access_key": "",
+    "secret_key": "",
+    "ami_name": "",
+    "region" : "",
+    "source_ami": "",
+    "instance_type": "",
+    "ssh_username": "",
+    "type": ""
+  }],
+  "provisioners": [
+    {
+     "type": "shell",
+      "inline": ""
+    },
+    {
+      "type": "shell",
+      "inline": ""
+    },
+    {
+      "type": "file",
+      "source": "",
+      "destination": ""
+    },
+    {
+      "type": "",
+      "playbook_file": ""
+    }
+  ]
+}
