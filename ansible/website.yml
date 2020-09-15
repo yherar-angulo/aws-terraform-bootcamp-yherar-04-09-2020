@@ -1,0 +1,25 @@
+---
+
+- name: instalacion y configuracion de apache.
+  hosts: all
+  become: true
+  
+  tasks:
+  - name: istalar el paquete apache. 
+    yum:
+      name: httpd
+      state: present
+  - name: Iniciar el servicio de apache.
+    service:
+      name: httpd 
+      state: started
+  - name: abrimos el puerto para el servicio de apache.
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+  - name: Reinicio del firewalld y se guradan los cambios.
+    service: 
+    name: firewalld 
+
+
