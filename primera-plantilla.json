@@ -1,0 +1,53 @@
+{
+    "builders":[{
+    "type": "amazon-ebs",
+    "access_key": "AKIA3PIQT4UYO3HZKTV5",
+    "secret_key": "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",
+    "region": "us-east-2",
+    "instance_type": "t2.micro",
+    "force_deregister":"true",
+    "ssh_username": "ec2-user",
+    "communicator": "ssh",
+    "ssh_timeout": "5m",
+    "associate_public_ip_address": true,
+    "ami_name": "ami-03f3f060b06578a2d",
+    "source_ami_filter": {
+        "filters": {
+            "virtualization-type": "hvm",
+            "name": "amzn2-ami-hvm-2.0.20200304.0-x86_64-gp2",
+            "root-device-type": "ebs"
+        },
+        "owners": "137112412989",
+        "most_recent": true
+    },
+    "run_tags": {
+        "Name": "packer-build-image"
+    }
+}],
+
+    "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sudo yum install unzip -y",
+      "sudo yum install git -y",
+      "git clone https://github.com/aularmarko/packer_installer.git /tmp/packer/",
+      "sudo sh /tmp/packer/packer-install.sh"
+]
+}],
+
+        "variables": {
+        "aws_access_key": "AKIA3PIQT4UYO3HZKTV5",
+        "aws_secret_key": "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",
+        "ami_name": "ami-packer",
+        "aws_region": "us-east-2",
+        "ssh_username": "ec2-user"
+    }
+  }
+
+  
+  
+
+
+
+
+
